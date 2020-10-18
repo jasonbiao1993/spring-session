@@ -78,6 +78,8 @@ import org.springframework.util.StringValueResolver;
  * @author Vedran Pavic
  * @see EnableRedisHttpSession
  * @since 1.0
+ *
+ * Redis Http Session 配置
  */
 @Configuration(proxyBeanMethods = false)
 public class RedisHttpSessionConfiguration extends SpringHttpSessionConfiguration
@@ -280,6 +282,7 @@ public class RedisHttpSessionConfiguration extends SpringHttpSessionConfiguratio
 	}
 
 	private RedisTemplate<Object, Object> createRedisTemplate() {
+		// 实例化 RedisTemplate
 		RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
 		redisTemplate.setKeySerializer(new StringRedisSerializer());
 		redisTemplate.setHashKeySerializer(new StringRedisSerializer());
